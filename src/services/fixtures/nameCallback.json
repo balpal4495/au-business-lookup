@@ -1,0 +1,105 @@
+{
+  "Message": "",
+  "Names": [
+    {
+      "Abn": "50622066657",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "A.K.A BURGERS PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "6714",
+      "Score": 100,
+      "State": "WA"
+    },
+    {
+      "Abn": "77613115889",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "BURGERS & CO. PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "2198",
+      "Score": 100,
+      "State": "NSW"
+    },
+    {
+      "Abn": "22110380535",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "Burgers Pty Ltd",
+      "NameType": "Entity Name",
+      "Postcode": "4011",
+      "Score": 100,
+      "State": "QLD"
+    },
+    {
+      "Abn": "30175521290",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "#Just Burgers#",
+      "NameType": "Business Name",
+      "Postcode": "2257",
+      "Score": 97,
+      "State": "NSW"
+    },
+    {
+      "Abn": "71122992536",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "$10 Burgers",
+      "NameType": "Business Name",
+      "Postcode": "3002",
+      "Score": 97,
+      "State": "VIC"
+    },
+    {
+      "Abn": "99611305563",
+      "AbnStatus": "0000000002",
+      "IsCurrent": true,
+      "Name": "'BURB BURGERS PTY. LTD.",
+      "NameType": "Entity Name",
+      "Postcode": "3167",
+      "Score": 97,
+      "State": "VIC"
+    },
+    {
+      "Abn": "97158847762",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "100 BURGERS PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "3000",
+      "Score": 97,
+      "State": "VIC"
+    },
+    {
+      "Abn": "24633563265",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "79 BURGER'S PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "3150",
+      "Score": 97,
+      "State": "VIC"
+    },
+    {
+      "Abn": "13694463110",
+      "AbnStatus": "0000000002",
+      "IsCurrent": true,
+      "Name": "AARON BURGERS",
+      "NameType": "Entity Name",
+      "Postcode": "2089",
+      "Score": 97,
+      "State": "NSW"
+    },
+    {
+      "Abn": "26636403944",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "AB BURGERS PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "3121",
+      "Score": 97,
+      "State": "VIC"
+    }
+  ]
+}
