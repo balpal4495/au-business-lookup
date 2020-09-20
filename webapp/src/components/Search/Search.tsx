@@ -2,19 +2,38 @@ import React, { useState } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import './Search.css';
+import { useCallback } from 'react';
+import { Business } from '../../shared/types';
+import { searchByName } from '../../services/businessLookupApi';
 
 export const Search: React.FC<RouteComponentProps> = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [searchErrorMessage, setSearchErrorMessage] = useState<string>('');
+  const [businesses, setBusinesses] = useState<Business[]>([]);
 
-  const handleSearchSubmit = () => {
+  // const handleSearchSubmit = () => {
+  //   setSearchErrorMessage('');
+  //   if (searchText.length === 0) {
+  //     setSearchErrorMessage(
+  //       'Please enter a business name before clicking search'
+  //     );
+  //   }
+  // };
+
+  const handleSearchSubmit = useCallback(async () => {
     setSearchErrorMessage('');
-    if (searchText.length === 0) {
+    setBusinesses([]);
+    if (searchText.length > 0) {
+      const res = await searchByName(searchText);
+      if (res) {
+        setBusinesses(res.Names);
+      }
+    } else {
       setSearchErrorMessage(
         'Please enter a business name before clicking search'
       );
     }
-  };
+  }, [searchText]);
 
   const handleSearchOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchErrorMessage('');
