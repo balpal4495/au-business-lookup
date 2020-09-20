@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
-import './Home.css';
+import './Search.css';
 
-export const Home: React.FC<RouteComponentProps> = () => {
+export const Search: React.FC<RouteComponentProps> = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [searchErrorMessage, setSearchErrorMessage] = useState<string>('');
 
