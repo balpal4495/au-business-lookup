@@ -71,6 +71,8 @@ export const Search: React.FC<RouteComponentProps> = () => {
             spacing={1}
           >
             <TextField
+              data-testid='business-name-search'
+              inputProps={{ "data-testid": "business-name-search-input" }}
               id='business-name-search'
               label='Business Name'
               variant='outlined'
