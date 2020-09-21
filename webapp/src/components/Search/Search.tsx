@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { RouteComponentProps } from '@reach/router';
-import { Button, Grid, TextField, Typography } from '@material-ui/core';
+import {
+  Button,
+  Grid,
+  LinearProgress,
+  TextField,
+  Typography,
+} from '@material-ui/core';
 import './Search.css';
 import { useCallback } from 'react';
 import { Business } from '../../shared/types';
@@ -9,6 +15,7 @@ import { searchByName } from '../../services/businessLookupApi';
 export const Search: React.FC<RouteComponentProps> = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [searchErrorMessage, setSearchErrorMessage] = useState<string>('');
+  const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [businesses, setBusinesses] = useState<Business[]>([]);
 
   // const handleSearchSubmit = () => {
@@ -24,18 +31,23 @@ export const Search: React.FC<RouteComponentProps> = () => {
     setSearchErrorMessage('');
     setBusinesses([]);
     if (searchText.length > 0) {
+      setIsProcessing(true);
       const res = await searchByName(searchText);
       if (res) {
+        console.log('res', res);
+        setIsProcessing(false);
         setBusinesses(res.Names);
       }
     } else {
       setSearchErrorMessage(
         'Please enter a business name before clicking search'
       );
+      setIsProcessing(false);
     }
   }, [searchText]);
 
   const handleSearchOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsProcessing(false);
     setSearchErrorMessage('');
     setSearchText(e.target.value);
   };
@@ -81,6 +93,12 @@ export const Search: React.FC<RouteComponentProps> = () => {
               Search
             </Button>
           </Grid>
+        </Grid>
+      </Grid>
+      {isProcessing && <LinearProgress />}
+      <Grid container direction='row'>
+        <Grid item xs={10}>
+          {businesses.length > 0 && <div>found {businesses.length}</div>}
         </Grid>
       </Grid>
     </div>
