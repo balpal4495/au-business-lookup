@@ -11,6 +11,7 @@ import './Search.css';
 import { useCallback } from 'react';
 import { Business } from '../../shared/types';
 import { searchByName } from '../../services/businessLookupApi';
+import { BusinessList } from '../BusinessList/BusinessList';
 
 export const Search: React.FC<RouteComponentProps> = () => {
   const [searchText, setSearchText] = useState<string>('');
@@ -72,7 +73,7 @@ export const Search: React.FC<RouteComponentProps> = () => {
           >
             <TextField
               data-testid='business-name-search'
-              inputProps={{ "data-testid": "business-name-search-input" }}
+              inputProps={{ 'data-testid': 'business-name-search-input' }}
               id='business-name-search'
               label='Business Name'
               variant='outlined'
@@ -101,6 +102,7 @@ export const Search: React.FC<RouteComponentProps> = () => {
       <Grid container direction='row'>
         <Grid item xs={10}>
           {businesses.length > 0 && <div>found {businesses.length}</div>}
+          {businesses.length > 0 && <BusinessList businesses={businesses} />}
         </Grid>
       </Grid>
     </div>

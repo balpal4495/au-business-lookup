@@ -61,7 +61,6 @@ describe(':Search tests', () => {
         fireEvent.change(searchBar, { target: { value: 'burgers' } });
         const searchButton = getByText('Search');
         fireEvent.click(searchButton);
-
         const errorText = queryByText(
           /Please enter a business name before clicking search/
         );
