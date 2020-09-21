@@ -19,15 +19,6 @@ export const Search: React.FC<RouteComponentProps> = () => {
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [businesses, setBusinesses] = useState<Business[]>([]);
 
-  // const handleSearchSubmit = () => {
-  //   setSearchErrorMessage('');
-  //   if (searchText.length === 0) {
-  //     setSearchErrorMessage(
-  //       'Please enter a business name before clicking search'
-  //     );
-  //   }
-  // };
-
   const handleSearchSubmit = useCallback(async () => {
     setSearchErrorMessage('');
     setBusinesses([]);
@@ -99,8 +90,8 @@ export const Search: React.FC<RouteComponentProps> = () => {
         </Grid>
       </Grid>
       {isProcessing && <LinearProgress />}
-      <Grid container direction='row'>
-        <Grid item xs={10}>
+      <Grid container direction='row' justify='center'>
+        <Grid item xs={12}>
           {businesses.length > 0 && <div>found {businesses.length}</div>}
           {businesses.length > 0 && <BusinessList businesses={businesses} />}
         </Grid>
