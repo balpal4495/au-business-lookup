@@ -1,3 +1,7 @@
-.App-Home {
+.App-Search {
   padding: 5px;
+}
+
+.App-Search__busines-list {
+  margin-top: 20px;
 }

@@ -45,7 +45,7 @@ export const Search: React.FC<RouteComponentProps> = () => {
   };
 
   return (
-    <div className='App-Home'>
+    <div className='App-Search'>
       <Grid container spacing={1} direction='row'>
         <Grid item xs={4}>
           <Typography>
@@ -92,8 +92,9 @@ export const Search: React.FC<RouteComponentProps> = () => {
       {isProcessing && <LinearProgress />}
       <Grid container direction='row' justify='center'>
         <Grid item xs={12}>
-          {businesses.length > 0 && <div>found {businesses.length}</div>}
+          <div className='App-Search__busines-list'>
           {businesses.length > 0 && <BusinessList businesses={businesses} />}
+          </div>
         </Grid>
       </Grid>
     </div>
