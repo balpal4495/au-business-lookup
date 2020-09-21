@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   res.status(200).send({ Message: '', Names: [] });
 });
 router.post('/', async (req, res) => {
-  const { searchText, maxResults = 10 } = req.body;
+  const { searchText, maxResults = 10 } = req.body.data;
   const apiFunction = 'MatchingNames.aspx';
 
   const url = `${BASE_URL}/${apiFunction}?callback=cb&name=${searchText}&maxResults=${maxResults}&guid=${GUID}`;
