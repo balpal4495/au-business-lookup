@@ -26,7 +26,6 @@ export const Search: React.FC<RouteComponentProps> = () => {
       setIsProcessing(true);
       const res = await searchByName(searchText);
       if (res) {
-        console.log('res', res);
         setIsProcessing(false);
         setBusinesses(res.Names);
       }
