@@ -31,7 +31,7 @@ you can the use `yarn start` to have the webpapp running on http://localhost:300
 
 ## functionality
 
-The user is presented with a search bar as the home view, where they are able to specify a business name.
+The user is presented with a search bar as the home view, where they are able to specify a business name and then search for matching businesses .
 
 it will then list out 10 matching business names as cards. The user can then display more details of the business by clicking on the card.
 
@@ -76,6 +76,8 @@ The app can be immedietly improved by providing a `/search/:businessName` route 
 the user could see a list of results by defining them in the url itself. This would not be an issue as theres ui in place to handle loading states.
 
 the design would likely need some more attention as i mainly attempted to have mobile viewports in mind, but centre aligning text is not always the best
+
+The user is able to serch a business via the abn in the url, but im not sure if it required a seperate screen, this is normally something that would be confirmed before writing code for the ticket and should have been something i clarified before writing any code.
 
 ## other thoughts
 
