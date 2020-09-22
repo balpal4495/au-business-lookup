@@ -1,20 +1,22 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import { Router } from '@reach/router';
+import { Router, navigate } from '@reach/router';
 
 import { Search } from './components/Search/Search';
+import { BusinessDetailsScreen } from './components/BusinessDetails/BusinessDetailsScreen';
 
 import './App.css';
 
 function App() {
   return (
     <div className='App'>
-      <Typography variant='h2' component='h2' gutterBottom>
+      <Typography className='App-Logo' variant='h4' component='h2' gutterBottom onClick={() => navigate('/')}>
         Business Lookup
       </Typography>
 
       <Router>
         <Search path='/' />
+        <BusinessDetailsScreen path='/business/:abn' />
       </Router>
     </div>
   );

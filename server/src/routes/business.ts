@@ -4,11 +4,11 @@ import axios from 'axios';
 import { parseResponse } from '..//utils/parseResponse';
 
 const router = Router();
-router.post('/', async (req, res) => {
-  const { searchText, maxResults = 10 } = req.body.data;
-  const apiFunction = 'MatchingNames.aspx';
+router.get('/:abn', async (req, res) => {
+  const { abn } = req.params
+  const apiFunction = 'AbnDetails.aspx';
 
-  const url = `${BASE_URL}/${apiFunction}?callback=cb&name=${searchText}&maxResults=${maxResults}&guid=${GUID}`;
+  const url = `${BASE_URL}/${apiFunction}?callback=cb&abn=${abn}&guid=${GUID}`;
 
   const response = await axios(url);
   const { data } = response;
@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 
   }
 
-  res.status(400).send({ Message: 'Bad request'});
+  res.status(404).send({ Message: 'Not Found'});
 });
 
 export default router;

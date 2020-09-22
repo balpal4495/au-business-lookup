@@ -18,5 +18,6 @@ app.use((req, res, next) => {
 
 // Register routes
 app.use('/api/search', routes.search);
+app.use('/api/business', routes.business);
 
 export default app;

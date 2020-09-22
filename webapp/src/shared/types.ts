@@ -14,3 +14,18 @@ export interface NameSearchResponse {
   Message: string;
   Names: Business[];
 }
+
+export interface AbnLookupResponse {
+  Abn: string;
+  AbnStatus: string;
+  Acn: string;
+  AddressDate: string;
+  AddressPostcode: string;
+  AddressState: string;
+  BusinessName: string[];
+  EntityName: string;
+  EntityTypeCode: string;
+  EntityTypeName: string;
+  Gst: string | null;
+  Message: string;
+}
