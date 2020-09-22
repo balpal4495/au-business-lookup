@@ -7,12 +7,12 @@ import {
   Paper,
 } from '@material-ui/core';
 import React from 'react';
+import { navigate } from '@reach/router';
 import { Business } from '../../shared/types';
 
 interface Props {
   business: Business;
 }
-
 export const BusinessListItem = (props: Props) => {
   const { business } = props;
 
@@ -29,7 +29,7 @@ export const BusinessListItem = (props: Props) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size='small'>Learn More</Button>
+            <Button size='small' onClick={() => navigate(`/business/${business.Abn}`)}>View more details</Button>
           </CardActions>
         </Card>
       </Paper>
